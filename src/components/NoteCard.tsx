@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 type Note = {
@@ -6,20 +7,21 @@ type Note = {
     body: string;
 }
 
-<View style={styles.card}>
-/** background? */
-</View>
-
-<View>
-/** left sidebar toggleable */
-</View>
+type NoteCardProps = {
+    Note: Note;
+};
 
 
 
-<View>
-/** note */
-</View>
-
+export default function NoteCard({ Note }: { Note: Note }) {
+    return (
+    <View style={styles.card}>
+    /** note */
+        <Text style={styles.title}>{Note.title}</Text>
+        <Text style={styles.body}>{Note.body}</Text>
+    </View>
+    );
+}
 /** 
  * 3 lines top left to open menu to search notes by body or title
  * swiping left deletes note
@@ -30,9 +32,13 @@ type Note = {
 
 const styles = StyleSheet.create({
 
+
     card: {
         backgroundColor: '#FEF8EC',
         padding: 10,
+        marginBottom: 10,
+        height: 150,
+        width: '90%',
 
     },
 
@@ -45,5 +51,5 @@ const styles = StyleSheet.create({
     body: {
         fontSize: 16,
         lineHeight: 24,
-    }
+    },
 });
