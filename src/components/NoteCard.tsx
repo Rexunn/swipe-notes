@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-type Note = {
-    id: string;
+class Note {
+    id: number;
     title: string;
     body: string;
-}
 
-type NoteCardProps = {
+    constructor(id: number, title: string, body: string) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+    }
+    
+
+class NoteCardProps  {
     Note: Note;
+
+    constructor(Note: Note) {
+        this.Note = Note;
+    }
+    save() {
+        JSON.stringify(Note)
+    }
+}
 };
 
 
