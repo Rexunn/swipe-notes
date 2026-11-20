@@ -2,15 +2,15 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import NoteCard, { Note } from '../components/NoteCard';
 
-const NotesList: Note[] = [
-
+const notes: Note[] = [
+    new Note(1, 'Note 1', 'This is the body of note 1.'),
 ]
 
 export default function HomeScreen() {
     return (
         <View style={styles.bg}>
             {/* Need to figure out how to make notecard have new id and store contents */}
-            <NoteCard Note={NotesList[0]} />
+            <NoteCard note={notes[0]} />
         </View>
     );
 }
