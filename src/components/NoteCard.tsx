@@ -20,11 +20,11 @@ export class Note {
 
 
 
-export default function NoteCard({ Note }: { Note: Note }) {
+export default function NoteCard({ note }: { note: Note }) {
     return (
     <View style={styles.card}>
-        <Text style={styles.title}>{Note.title}</Text>
-        <Text style={styles.body}>{Note.body}</Text>
+        <Text style={styles.title}>{note.title}</Text>
+        <Text style={styles.body}>{note.body}</Text>
     </View>
     );
 }
