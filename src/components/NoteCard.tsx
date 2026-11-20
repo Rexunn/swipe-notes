@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-class Note {
+export class Note {
     id: number;
     title: string;
     body: string;
@@ -10,19 +10,12 @@ class Note {
         this.id = id;
         this.title = title;
         this.body = body;
-    }
-    
+    };
 
-class NoteCardProps  {
-    Note: Note;
-
-    constructor(Note: Note) {
-        this.Note = Note;
+    //storage
+    save(): string {
+        return JSON.stringify(this); //takes note and turns it to a string
     }
-    save() {
-        JSON.stringify(Note)
-    }
-}
 };
 
 
@@ -30,7 +23,6 @@ class NoteCardProps  {
 export default function NoteCard({ Note }: { Note: Note }) {
     return (
     <View style={styles.card}>
-    /** note */
         <Text style={styles.title}>{Note.title}</Text>
         <Text style={styles.body}>{Note.body}</Text>
     </View>
