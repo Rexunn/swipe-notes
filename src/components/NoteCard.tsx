@@ -1,23 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
-export class Note {
-    id: number;
-    title: string;
-    body: string;
-
-    constructor(id: number, title: string, body: string) {
-        this.id = id;
-        this.title = title;
-        this.body = body;
-    };
-
-    //storage
-    save(): string {
-        return JSON.stringify(this); //takes note and turns it to a string
-    }
-};
-
+import { Note } from '../types/Note';
 
 
 export default function NoteCard({ note }: { note: Note }) {

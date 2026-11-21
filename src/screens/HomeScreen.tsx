@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import NoteCard, { Note } from '../components/NoteCard';
+import { Note } from '../types/Note';
+import NoteCard from '../components/NoteCard';
 
 const notes: Note[] = [
     new Note(1, 'Note 1', 'This is the body of note 1.'),
