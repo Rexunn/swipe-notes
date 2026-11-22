@@ -20,11 +20,15 @@ export default function HomeScreen() {
 
     
     function NextNote() {
-        setIndex(index +1);
+        setIndex(
+        (index + 1 >= notes.length) ? 0 : index + 1
+        );
     }
 
     function PrevNote() {
-        setIndex(index -1);
+        setIndex(
+            (index - 1 < 0) ? notes.length - 1 : index - 1
+        );
     }
     return (
         
